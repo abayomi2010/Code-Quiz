@@ -13,7 +13,7 @@ let initialElement = document.getElementById("initials");
 let feedBackElement = document.getElementById("feedback");
 
 
-let sfx = new Audio("assets/sfx/correct.wav");
+let sfxRight = new Audio("assets/sfx/correct.wav");
 
 function getQuestion() {
     let currentQuestion = questions[currentQuestionIndex];
@@ -37,8 +37,35 @@ function getQuestion() {
 };
 
 function questionClick() {
-    alert("hello")
-};
+    if (this.value !== questions[currentQuestionIndex].answer) {
+        time -= 15;
+
+        if (time < 0) {
+            time = 0;
+        }
+
+    timerElement.textContent = time;
+
+    feedBackElement.textContent = "Wrong";
+    } else {
+        sfxRight.play();
+        feedBackElement.textContent = "Correct!";
+    }
+
+    feedBackElement.setAttribute("class", "feedback");
+
+    setTimeout(() => {
+        feedBackElement.setAttribute("class", "feedback hide");
+    }, 1000)
+
+    currentQuestionIndex++;
+
+    if (currentQuestionIndex === questions.length) {
+        quizEnd()
+    } else {
+        getQuestion();
+}
+}
 
 function quizEnd() {
     clearInterval(timerID);
