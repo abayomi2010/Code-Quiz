@@ -1,4 +1,4 @@
-# Module 6 Challenge Web APIs: Code Quiz
+# Code Quiz
 
   
 ## Mock-Up
@@ -10,5 +10,5 @@ The following animation demonstrates the application functionality:
 Link to the GitHub [repository:](https://github.com/abayomi2010/Code-Quiz)
 
 Link to the [deployed page](https://abayomi2010.github.io/Code-Quiz/)
----
+
 © 2022 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
