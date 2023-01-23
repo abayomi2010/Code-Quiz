@@ -6,7 +6,7 @@ let questions =[
     },
 
     {
-        "title": "Conditionals keywords are:",
+        "title": "One of the following is a conditionals keyword:",
         "choices": ["if", "forEach", "map", "reduce"],
         "answer": "if"
     },
