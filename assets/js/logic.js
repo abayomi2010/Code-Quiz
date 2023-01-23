@@ -107,10 +107,25 @@ function startQuiz() {
 
 
 function saveHighScore() {
+    let initials = initialElement.value.trim();
+    
+    if (initials !== "") {
+    let highScores = JSON.parse(localStorage.getItem("highscores")) || [];
+    let newScore = {
+        score: time,
+        initials: initials
+    }
 
+    highScores.push(newScore);
+    localStorage.setItem("highscores", JSON.stringify(highScores));
+    window.location.href = "highscores.html";
 } 
+}
 
 function checkForEnter(event) {
+    if (event.key === "enter") {
+        saveHighScore();
+    }
 
 }
 
